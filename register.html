@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backoffice - Registro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="spider-bg">
+
+    <div class="container">
+        <div class="card">
+            <div class="logo-area">
+                <div class="logo-badge">
+                    <i class="fa-solid fa-user-plus"></i>
+                </div>
+                <h1>Crear Cuenta</h1>
+                <p>Unete a la plataforma de gestion</p>
+            </div>
+
+            <form id="registerForm" class="form">
+                <div class="input-group">
+                    <label for="nombre"><i class="fa-solid fa-user"></i> Nombre completo</label>
+                    <input type="text" id="nombre" placeholder="Tu nombre" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email"><i class="fa-solid fa-envelope"></i> Correo electronico</label>
+                    <input type="email" id="email" placeholder="usuario@correo.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="password"><i class="fa-solid fa-lock"></i> Contrasena</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    <span>Registrarse</span>
+                    <i class="fa-solid fa-id-card"></i>
+                </button>
+            </form>
+
+            <div class="card-footer">
+                <p>Ya tienes cuenta? <a href="index.html">Inicia sesion</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            Swal.fire({
+                title: 'Registro guardado',
+                text: 'Tu cuenta ha sido creada exitosamente.',
+                icon: 'success',
+                background: '#12131a',
+                color: '#ffffff',
+                confirmButtonColor: '#e31b23'
+            }).then(() => {
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html>
